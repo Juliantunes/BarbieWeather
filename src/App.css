@@ -1,62 +1,78 @@
 .container {
-  display:flex; 
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 25px;
 }
 
-
-.input{
-  padding: 15px; 
-  width :80%;
-  margin: auto; 
-  border: 1px solid lightgray; 
+.input {
+  padding: 15px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid lightgray;
   border-radius: 6px;
   font-size: 16px;
 }
 
 .input:focus {
-  outline:none;
+  outline: none;
 }
 
 .weather-data {
-  margin-top:100 px; 
-  display:flex; 
-  flex-direction: column; 
-  align-items:center; 
+  margin-top: 20px; /* Corrected margin-top value */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.city{
+.city {
   font-size: 30px;
-  font-weight:200;
+  font-weight: 200;
 }
 
-.temp {
-  font-size:90 px; 
-  padding:10px;
-  border:1px solid lightgray;
-  border-radius:12px; 
+.temp, .feels, .description {
+  font-size: 24px; /* Adjusted font-size for better readability */
+  padding: 10px;
+  margin: 10px 0; /* Added margin for spacing */
+  border: 1px solid lightgray;
+  border-radius: 12px;
 }
 
-.weather {
-  font-size: 30px; 
-  font-weight:200; 
+.description {
+  font-size: 20px; /* Separate font-size for description if needed */
+  font-weight: 400; /* Adjusted font-weight for description */
 }
 
-.feels {
-  font-size:90 px; 
-  padding:10px;
-  border:1px solid lightgray;
-  border-radius:12px; 
+
+.autocomplete-container {
+  width: 80%;
+  margin: auto;
 }
 
-.Description {
-  font-size:90 px; 
-  padding:10px;
-  border:1px solid lightgray;
-  border-radius:12px; 
+.autocomplete-item {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
 }
 
+.autocomplete-item-highlighted {
+  background: lightgray;
+}
+
+.autocomplete-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.autocomplete-input:focus {
+  outline: none;
+}
 
 
