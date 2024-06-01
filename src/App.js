@@ -40,6 +40,18 @@ const App = () => {
     }
   };
 
+  const getBarbieImage = () => {
+    if(!weatherData.main) return ''; 
+
+    const temp = weatherData.main.temp;
+    switch(true) {
+      case temp >= 80:
+        return 'images/summer-barbie.gif'
+        default: 
+          return '';
+    }
+  };
+
   return (
     <div className="container">
       <Autocomplete
@@ -75,6 +87,7 @@ const App = () => {
           <p className='temp'>{Math.round((weatherData.main.temp - 32) * 5 / 9)}°C </p>
           <p className='feels'> Feels like: {Math.round(weatherData.main.feels_like)}°F </p>   
           <p className='description'> Description: {weatherData.weather[0].main}</p>
+            <img src = {getBarbieImage()} alt = "Weather Barbie" className='barbie-image' />
         </div>
       )}
     </div>
