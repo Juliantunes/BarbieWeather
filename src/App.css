@@ -1,9 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFF;
+  --pink: #FDA4D4;
+  --silver: rgba(255, 255, 255, 0.16);
+  --black: #020203;
+  --background: radial-gradient(392.51% 129.14% at 0.00% 0%, #0BB1FF 7.98%, #79DAFD 91.70%);
+  --shadow-car: linear-gradient(to top, rgba(20, 20, 20, 0.8), transparent 40%);
+  --shadow-name: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+body {
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: var(--white);
+  font: 500 1rem "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: lavenderblush;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 25px;
+  text-align: center;
 }
 
 .input {
@@ -13,6 +44,7 @@
   border: 1px solid lightgray;
   border-radius: 6px;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .input:focus {
@@ -20,10 +52,15 @@
 }
 
 .weather-data {
-  margin-top: 20px; /* Corrected margin-top value */
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional for readability */
+  border-radius: 12px;
+  color: var(--black);
 }
 
 .city {
@@ -32,35 +69,33 @@
 }
 
 .temp, .feels, .description {
-  font-size: 24px; /* Adjusted font-size for better readability */
+  font-size: 24px;
   padding: 10px;
-  margin: 10px 0; /* Added margin for spacing */
+  margin: 10px 0;
   border: 1px solid lightgray;
   border-radius: 12px;
+  width: 100%;
+  text-align: center;
 }
-
-.description {
-  font-size: 20px; /* Separate font-size for description if needed */
-  font-weight: 400; /* Adjusted font-weight for description */
-}
-
 
 .autocomplete-container {
   width: 80%;
   margin: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .autocomplete-item {
   padding: 10px;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(240, 131, 233);
   border-radius: 6px;
   font-size: 16px;
-  background: white;
+  background: rgb(255, 134, 249);
   cursor: pointer;
 }
 
 .autocomplete-item-highlighted {
-  background: lightgray;
+  background: rgb(74, 225, 255);
 }
 
 .autocomplete-input {
@@ -75,10 +110,19 @@
   outline: none;
 }
 
-
 .barbie-image {
   width: 200px;
   height: auto;
   margin-top: 20px;
 }
 
+.car-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* Ensure it stays behind other content */
+}

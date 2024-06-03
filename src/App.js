@@ -40,13 +40,27 @@ const App = () => {
     }
   };
 
+ 
+  
+
   const getBarbieImage = () => {
     if(!weatherData.main) return ''; 
 
     const temp = weatherData.main.temp;
     switch(true) {
-      case temp >= 80:
-        return 'images/summer-barbie.gif'
+
+      case temp <50 :
+        return '/images/winter-barbie.gif'
+
+      case temp >= 50 && temp<70 :
+        return '/images/spring-barbie.webp'
+
+      case temp >=70 && temp <90 :
+        return '/images/summer-barbie.gif'
+      
+      case temp >= 90 :
+        return '/images/desert-barbie.webp'
+
         default: 
           return '';
     }
@@ -79,6 +93,7 @@ const App = () => {
       {typeof weatherData.main === 'undefined' ? (
         <div>
           <p>Welcome to the weather app! Enter a city to get the weather for.</p>
+          <img src="/images/background-car.png" alt="car" className="car-image" />
         </div>
       ) : (
         <div className='weather-data'>
@@ -87,6 +102,7 @@ const App = () => {
           <p className='temp'>{Math.round((weatherData.main.temp - 32) * 5 / 9)}°C </p>
           <p className='feels'> Feels like: {Math.round(weatherData.main.feels_like)}°F </p>   
           <p className='description'> Description: {weatherData.weather[0].main}</p>
+            
             <img src = {getBarbieImage()} alt = "Weather Barbie" className='barbie-image' />
         </div>
       )}
