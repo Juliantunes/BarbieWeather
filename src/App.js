@@ -40,6 +40,21 @@ const App = () => {
     }
   };
 
+
+  const background= () => {
+    if(!weatherData.main) return ''; 
+
+    const temp = weatherData.main.temp;
+    switch(true) {
+
+      case temp <50 :
+
+        return '/images/snow.gif'
+
+        default: 
+          return '';
+    }
+  };
  
   
 
@@ -50,6 +65,7 @@ const App = () => {
     switch(true) {
 
       case temp <50 :
+
         return '/images/winter-barbie.gif'
 
       case temp >= 50 && temp<70 :
@@ -104,6 +120,7 @@ const App = () => {
           <p className='description'> Description: {weatherData.weather[0].main}</p>
             
             <img src = {getBarbieImage()} alt = "Weather Barbie" className='barbie-image' />
+            <img src = {background()} alt = "Weather background" className='background' />
         </div>
       )}
     </div>

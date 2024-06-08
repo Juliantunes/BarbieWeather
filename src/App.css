@@ -110,11 +110,24 @@ a {
   outline: none;
 }
 
+.background {  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* Ensure it stays behind other content */
+
+}
+
 .barbie-image {
   width: 200px;
   height: auto;
   margin-top: 20px;
 }
+
+
 
 .car-image {
   width: 100%;
